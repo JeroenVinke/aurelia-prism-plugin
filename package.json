@@ -1,6 +1,6 @@
 {
   "name": "aurelia-prism-plugin",
-  "version": "0.3.0",
+  "version": "1.0.1",
   "description": "A prismJS wrapper for Aurelia",
   "keywords": [
     "aurelia",

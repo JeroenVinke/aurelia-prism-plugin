@@ -38,7 +38,7 @@ define(['exports', 'aurelia-framework', 'prism', 'prism/themes/prism.css!'], fun
     _createDecoratedClass(AuCode, [{
       key: 'attached',
       value: function attached() {
-        var pre = document.createElement("pre");
+        var pre = document.createElement('pre');
         this.element.appendChild(pre);
         pre.innerHTML = _prism2['default'].highlight(this.html, Prism.languages[this.language]);
       }
@@ -47,7 +47,7 @@ define(['exports', 'aurelia-framework', 'prism', 'prism/themes/prism.css!'], fun
     var _AuCode = AuCode;
     AuCode = (0, _aureliaFramework.inject)(Element, _aureliaFramework.TargetInstruction)(AuCode) || AuCode;
     AuCode = (0, _aureliaFramework.noView)(AuCode) || AuCode;
-    AuCode = (0, _aureliaFramework.customElement)("au-code")(AuCode) || AuCode;
+    AuCode = (0, _aureliaFramework.customElement)('au-code')(AuCode) || AuCode;
     AuCode = (0, _aureliaFramework.processContent)(function (compiler, resources, element, instruction) {
       parseCode(element, resources, instruction);
       return true;

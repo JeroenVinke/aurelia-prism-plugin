@@ -10,7 +10,13 @@ System.register(['aurelia-framework', 'prism', 'prism/themes/prism.css!'], funct
   function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined; Object.defineProperty(target, key, descriptor); }
 
   function parseCode(element, resources, instruction) {
-    instruction.html = dedent(element.innerHTML);
+    instruction.html = dedent(decodeHtml(element.innerHTML));
+  }
+
+  function decodeHtml(html) {
+    var txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
   }
 
   function dedent(str) {

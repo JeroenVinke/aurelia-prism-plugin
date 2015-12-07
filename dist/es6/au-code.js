@@ -27,7 +27,13 @@ export class AuCode {
 }
 
 function parseCode(element, resources, instruction) {
-  instruction.html = dedent(element.innerHTML);
+  instruction.html = dedent(decodeHtml(element.innerHTML));
+}
+
+function decodeHtml(html) {
+  let txt = document.createElement('textarea');
+  txt.innerHTML = html;
+  return txt.value;
 }
 
 function dedent(str) {
